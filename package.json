@@ -1,0 +1,74 @@
+{
+  "name": "react_ssr",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^5.0.0-alpha.7",
+    "html-webpack-plugin": "^3.2.0",
+    "http": "^0.0.0",
+    "minimist": "^1.2.0",
+    "mobx": "^5.10.1",
+    "mobx-react": "^6.0.3",
+    "mobx-react-devtools": "^6.1.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "scripts": {
+    "app-babel": "cross-env NODE_ENV=test babel src/App.js --out-file server/app-babel.js",
+    "server-babel": "cross-env NODE_ENV=test babel server/server.js --out-file server/server-babel.js",
+    "server1-babel-start": "nodemon server/server-babel.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config ./webpack.config.js",
+    "prod": "cross-env NODE_ENV=production webpack --sort-chunks-by --config ./webpack.config.js",
+    "start": "npm run dev",
+    "build": "npm run prod"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.6.5",
+    "babel-plugin-relay": "1.6.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "child_process": "^1.0.2",
+    "copy-webpack-plugin": "^4.4.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fs": "0.0.1-security",
+    "json-loader": "^0.5.7",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
