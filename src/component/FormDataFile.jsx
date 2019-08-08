@@ -55,6 +55,12 @@ class FormDataFile extends Component {
                     <input type="submit" value="Submit"/>
                 </form>
                 <button onClick={this.query3001} >query3001</button>
+                <form style={{display:'block',width: '500px',margin: 'auto',border: '1px solid gray'}} ref="form" action="/api/formdata" method="post" >
+                    <input type='text' name="name" readOnly value={name}/><br />
+                    <input multiple type='file' id="demoFile" name="myfile" /><br />
+
+                    <input type="submit" value="Submit"/>
+                </form>
             </div>
         );
     }

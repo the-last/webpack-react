@@ -19,29 +19,19 @@
     "react-router-dom": "^5.0.1"
   },
   "scripts": {
+    "clear": "rimraf -rf ./dist && mkdirp ./dist",
     "app-babel": "cross-env NODE_ENV=test babel src/App.js --out-file server/app-babel.js",
     "server-babel": "cross-env NODE_ENV=test babel server/server.js --out-file server/server-babel.js",
     "server1-babel-start": "nodemon server/server-babel.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config ./webpack.config.js",
-    "prod": "cross-env NODE_ENV=production webpack --sort-chunks-by --config ./webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress",
+    "prod": "npm run clear && cross-env NODE_ENV=production webpack -p ",
     "start": "npm run dev",
     "build": "npm run prod"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "babel-cli": "^6.26.0",
@@ -68,6 +58,7 @@
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.0",
     "webpack": "^4.34.0",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.7.2"
   }

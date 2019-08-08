@@ -13,6 +13,8 @@ const router = (
                 <li><Link to="/event">合成事件</Link></li>
                 <li><Link to="/inbox">inbox</Link></li>
                 <li><Link to="/formdatafile">formdatafile</Link></li>
+                <li><Link to="/messages/3">messages</Link></li>
+
             </ul>
         </div>
         <div >

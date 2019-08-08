@@ -21,7 +21,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[md5:contenthash:hex:8].js'
+        filename: '[name].[hash:8].js'
     },
     devtool: 'source-map',
     module: {
@@ -29,7 +29,11 @@ const config = {
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                use: "babel-loader"
+                use: [
+                    {
+                        loader: "babel-loader"
+                    }
+                ]
             },
             {
                 test: /\.ejs$/,
@@ -113,7 +117,7 @@ const config = {
         port: 4001,
         proxy: {
             "/api": {
-                target: "http://127.0.0.1:4010/",
+                target: "http://127.0.0.1:3008/",
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': '/'
@@ -136,7 +140,7 @@ const config = {
             },
             template: './public/index.html'
         }),
-        new ExtractTextPlugin("[name].[md5:contenthash:hex:8].css", { allChunks: true }),
+        new ExtractTextPlugin("[name].[hash:8].css", { allChunks: true }),
         new CopyWebpackPlugin([
             {
               from: path.resolve(__dirname, "./public"),

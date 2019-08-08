@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import * as A from '../../utils/a';
+console.log(A, '开始引入 A ')
+
+console.log('--------------------------------------')
+const C = require('../../utils/c')
+console.log(C, '开始引入 C ')
 
 class EventReact extends Component {
     constructor(){
